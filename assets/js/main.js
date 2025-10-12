@@ -3,7 +3,7 @@ import { getMoviesApi } from "./getMoviesApi.js";
 import { scrollEventFn } from "./scrollEvent.js";
 import {movieShowerFn} from "./getHollywoodMoviesApi.js";
 
-scrollEventFn();
+await scrollEventFn();
 //brightness-60 added
 //chose correct color for movie description.
 // await getTopRatedMovies();
