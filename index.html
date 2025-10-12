@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./assets/images/Logo-Letter.png">
+    <title>Aesthetic Movies</title>
+
+    <!-- tailwind -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- daisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/combine/npm/daisyui@5/components/footer.css,npm/daisyui@5/components/hovergallery.css,npm/daisyui@5/components/range.css,npm/daisyui@5/components/mask.css,npm/daisyui@5/components/stat.css,npm/daisyui@5/components/fab.css,npm/daisyui@5/components/label.css,npm/daisyui@5/components/toast.css,npm/daisyui@5/components/breadcrumbs.css,npm/daisyui@5/components/select.css,npm/daisyui@5/components/dock.css,npm/daisyui@5/components/avatar.css,npm/daisyui@5/components/validator.css,npm/daisyui@5/components/badge.css,npm/daisyui@5/components/stack.css,npm/daisyui@5/components/dropdown.css,npm/daisyui@5/components/hero.css,npm/daisyui@5/components/card.css,npm/daisyui@5/components/link.css,npm/daisyui@5/components/swap.css,npm/daisyui@5/components/loading.css,npm/daisyui@5/components/button.css,npm/daisyui@5/components/tooltip.css,npm/daisyui@5/components/countdown.css,npm/daisyui@5/components/radio.css,npm/daisyui@5/components/radialprogress.css,npm/daisyui@5/components/skeleton.css,npm/daisyui@5/components/modal.css,npm/daisyui@5/components/progress.css,npm/daisyui@5/components/calendar.css,npm/daisyui@5/components/rating.css,npm/daisyui@5/components/input.css,npm/daisyui@5/components/navbar.css,npm/daisyui@5/components/mockup.css,npm/daisyui@5/components/fieldset.css,npm/daisyui@5/components/status.css,npm/daisyui@5/components/table.css,npm/daisyui@5/components/toggle.css,npm/daisyui@5/components/divider.css,npm/daisyui@5/components/drawer.css,npm/daisyui@5/components/checkbox.css,npm/daisyui@5/components/carousel.css,npm/daisyui@5/components/menu.css,npm/daisyui@5/components/timeline.css,npm/daisyui@5/components/filter.css,npm/daisyui@5/components/chat.css,npm/daisyui@5/components/diff.css,npm/daisyui@5/components/indicator.css,npm/daisyui@5/components/steps.css,npm/daisyui@5/components/fileinput.css,npm/daisyui@5/components/alert.css,npm/daisyui@5/components/list.css,npm/daisyui@5/components/kbd.css,npm/daisyui@5/components/tab.css,npm/daisyui@5/components/textarea.css,npm/daisyui@5/components/collapse.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body class="bg-black font-Ubuntu">
+    <main
+      class="bg-[url(/assets/images/movie-site_background-img.webp)] wrapper w-full h-190"
+    >
+      <nav class="fixed top-0 w-full z-60 bg-black/10 font-sans" id="nav-bar">
+        <div class="flex ml-1 mr-5">
+          <div class="flex" id="nav--left">
+            <div
+              class="flex justify-center items-center p-3 cursor-pointer"
+              id="logo"
+            >
+              <img
+                src="./assets/images/Logo-Letter.png"
+                class="h-12"
+                alt="Logo"
+              />
+              <img
+                src="./assets/images/Logo-Fullname.svg"
+                class="h-11"
+                alt="Logo-Fullname"
+              />
+            </div>
+            <ul
+              class="flex justify-center items-center px-5 space-x-3"
+              id="menus"
+            >
+              <a class="nav--menus">Home</a>
+              <el-dropdown class="inline-block">
+                <button class="inline-flex nav--menus">
+                  Movies
+                  <svg
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    data-slot="icon"
+                    aria-hidden="true"
+                    class="-mr-1 size-5 text-gray-400"
+                  >
+                    <path
+                      d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                      fill-rule="evenodd"
+                    />
+                  </svg>
+                </button>
+
+                <el-menu
+                  anchor="bottom end"
+                  popover
+                  class="w-56 origin-top-right divide-y divide-white/10 rounded-md bg-gray-800 outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                >
+                  <div class="py-1">
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm font-semibold text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                      >Categories</a
+                    >
+                  </div>
+                  <div class="py-1">
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                      >Tamil</a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                      >Malayalam</a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                      >Kannada</a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                      >Telugu</a
+                    >
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                      >Hindi</a
+                    >
+                  </div>
+                  <div class="py-1">
+                    <a
+                      href="#"
+                      class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                      >Hollywood</a
+                    >
+                  </div>
+                </el-menu>
+              </el-dropdown>
+              <a class="nav--menus">Web Series</a>
+              <a class="nav--menus">anime</a>
+            </ul>
+          </div>
+
+          <div class="flex ms-auto content-center space-x-2">
+            <!-- search-bar -->
+            <div class="relative content-center" id="search-bar">
+              <div
+                class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+              >
+                <svg
+                  class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                  />
+                </svg>
+              </div>
+              <input
+                type="search"
+                id="default-search"
+                class="block w-full pl-10 pr-15 py-2 justify-center text-sm border text-left rounded-full bg-gray-800/90 border-gray-600 focus:border-violet-500 focus:outline-none placeholder-gray-400 text-white"
+                placeholder="Search Movies & Series"
+                required
+              />
+            </div>
+            <!-- avatar -->
+            <div
+              class="relative content-center my-auto inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600"
+            >
+              <span
+                class="font-medium text-gray-600 dark:text-gray-300 cursor-pointer"
+                >DL</span
+              >
+            </div>
+          </div>
+        </div>
+        <hr class="w-full border border-gray-800" />
+      </nav>
+      <!-- nav finished -->
+      <!-- upper space div -->
+      <div class="h-18 bg-transparent text-3xl text-white"></div>
+
+      <!-- hero section -->
+      <section class="h-160 w-full">
+        <div class="w-4xl h-full ml-25 pt-40">
+          <h1 class="font-bold text-8xl text-white p-3">
+            Free Movies to Watch , Anytime Anywhere.
+          </h1>
+          <p class="text-white text-3xl my-3 ml-4 w-2xl">
+            The search is over! Let Plex help the perfect movie to watch tonight
+            for free.
+          </p>
+          <div class="mt-6">
+            <a
+              href="#"
+              class="ml-4 bg-yellow-500 px-5 py-2 rounded-full text-white text-xl font-semibold hover:bg-yellow-400 select-none"
+            >
+              Watch Free
+            </a>
+          </div>
+        </div>
+        <hr class="w-full border-2 border-gray-800" />
+      </section>
+      <!-- hero section #close -->
+    </main>
+
+    <!-- star carousel -->
+    <section>
+      <div class="carousel h-130 w-full" id="carousel">
+        <div id="slide1" class="carousel-item relative w-full">
+          <img
+            src="https://wallpapercave.com/wp/wp5497121.jpg"
+            class="w-full object-top object-cover brightness-60"
+            onerror="this.onerror=null; this.src='https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp';"
+          />
+          <div
+            class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+          >
+            <a class="size-0"></a>
+            <a href="#slide2" class="slide-right-btn">❯</a>
+          </div>
+          <div class="absolute justify-center w-full flex-col top-2/3">
+            <div class="space-x-1 text-center space-y-2">
+              <h1 class="text-4xl text-white font-bold font-serif">
+                Avengers EndGame
+              </h1>
+              <p class="text-xl text-white font-light">
+                Some representative placeholder content for the first slide.
+              </p>
+              <button type="button" class="watch-btn">Watch Now</button>
+            </div>
+          </div>
+        </div>
+        <div id="slide2" class="carousel-item relative w-full">
+          <img
+            src="https://wallpapercave.com/uwp/uwp4706201.webp"
+            onerror="this.onerror=null; this.src='https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp';"
+            class="w-full object-top object-cover brightness-30"
+          />
+          <div
+            class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide1" class="slide-left-btn">❮</a>
+            <a href="#slide3" class="slide-right-btn">❯</a>
+          </div>
+          <div class="absolute justify-center w-full flex-col top-2/3">
+            <div class="space-x-1 text-center space-y-2">
+              <h1 class="text-4xl text-white font-bold font-serif">Batman</h1>
+              <p class="text-xl text-white font-light">
+                Some representative placeholder content for the first slide.
+              </p>
+              <button type="button" class="watch-btn">Watch Now</button>
+            </div>
+          </div>
+        </div>
+        <div id="slide3" class="carousel-item relative w-full">
+          <img
+            src="https://wallpapercave.com/wp/wp6471925.png"
+            onerror="this.onerror=null; this.src='https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp';"
+            class="w-full object-top object-cover brightness-60"
+          />
+          <div
+            class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide2" class="slide-left-btn">❮</a>
+            <a href="#slide4" class="slide-right-btn">❯</a>
+          </div>
+          <div class="absolute justify-center w-full flex-col top-2/3">
+            <div class="space-x-1 text-center space-y-2">
+              <h1 class="text-4xl text-white font-bold font-serif">
+                Black Widow
+              </h1>
+              <p class="text-xl text-white font-light">
+                Some representative placeholder content for the first slide.
+              </p>
+              <button type="button" class="watch-btn">Watch Now</button>
+            </div>
+          </div>
+        </div>
+        <div id="slide4" class="carousel-item relative w-full">
+          <img
+            src="https://wallpapercave.com/wp/wp5306675.jpg"
+            onerror="this.onerror=null; this.src='https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp';"
+            class="w-full object-top object-cover brightness-50"
+          />
+          <div
+            class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide3" class="slide-left-btn">❮</a>
+            <a href="#slide5" class="slide-right-btn">❯</a>
+          </div>
+          <div class="absolute justify-center w-full flex-col top-2/3">
+            <div class="space-x-1 text-center space-y-2">
+              <h1 class="text-4xl text-white font-bold font-serif">Cine</h1>
+              <p class="text-xl text-white font-light">
+                Some representative placeholder content for the first slide.
+              </p>
+              <button type="button" class="watch-btn">Watch Now</button>
+            </div>
+          </div>
+        </div>
+        <div id="slide5" class="carousel-item relative w-full">
+          <img
+            src="https://wallpapercave.com/wp/wp1851127.png"
+            onerror="this.onerror=null; this.src='https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp';"
+            class="w-full object-center object-cover brightness-50"
+          />
+          <div
+            class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide4" class="slide-left-btn">❮</a>
+            <a href="#slide6" class="slide-right-btn">❯</a>
+          </div>
+          <div class="absolute justify-center w-full flex-col top-2/3">
+            <div class="space-x-1 text-center space-y-2">
+              <h1 class="text-4xl text-white font-bold font-serif">
+                Annabel Creation
+              </h1>
+              <p class="text-xl text-white font-light">
+                Some representative placeholder content for the first slide.
+              </p>
+              <button type="button" class="watch-btn">Watch Now</button>
+            </div>
+          </div>
+        </div>
+        <div id="slide6" class="carousel-item relative w-full">
+          <img
+            src="https://wallpapercave.com/wp/wp15474025.jpg"
+            onerror="this.onerror=null; this.src='https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp';"
+            class="w-full object-top object-cover brightness-50"
+          />
+          <div
+            class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide5" class="slide-left-btn">❮</a>
+            <a href="#slide7" class="slide-right-btn">❯</a>
+          </div>
+          <div class="absolute justify-center w-full flex-col top-2/3">
+            <div class="space-x-1 text-center space-y-2">
+              <h1 class="text-4xl text-white font-bold font-serif">
+                F1
+              </h1>
+              <p class="text-xl text-white font-light">
+                Some representative placeholder content for the first slide.
+              </p>
+              <button type="button" class="watch-btn">Watch Now</button>
+            </div>
+          </div>
+        </div>
+        <div id="slide7" class="carousel-item relative w-full">
+          <img
+            src="https://wallpapercave.com/wp/wp6495695.jpg"
+            onerror="this.onerror=null; this.src='https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp';"
+            class="w-full object-top object-cover brightness-50"
+          />
+          <div
+            class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide6" class="slide-left-btn">❮</a>
+            <a href="#slide8" class="slide-right-btn">❯</a>
+          </div>
+          <div class="absolute justify-center w-full flex-col top-2/3">
+            <div class="space-x-1 text-center space-y-2">
+              <h1 class="text-4xl text-white font-bold font-serif">
+                Peaky Blinders
+              </h1>
+              <p class="text-xl text-white font-light">
+                Some representative placeholder content for the first slide.
+              </p>
+              <button type="button" class="watch-btn">Watch Now</button>
+            </div>
+          </div>
+        </div>
+        <div id="slide8" class="carousel-item relative w-full">
+          <img
+            src="https://wallpapercave.com/wp/wp6498729.jpg"
+            onerror="this.onerror=null; this.src='https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp';"
+            class="w-full object-top object-cover brightness-50"
+          />
+          <div
+            class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between"
+          >
+            <a href="#slide7" class="slide-left-btn">❮</a>
+          </div>
+          <div class="absolute justify-center w-full flex-col top-2/3">
+            <div class="space-x-1 text-center space-y-2">
+              <h1 class="text-4xl text-white font-bold font-serif">Her</h1>
+              <p class="text-xl text-white font-light">
+                Some representative placeholder content for the first slide.
+              </p>
+              <button type="button" class="watch-btn">Watch Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+    <section id="whole-movie-rows">
+    <!-- Start row -1 -->
+     <section class="relative bg-transparent w-full p-3">
+        <h2 class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold">Top Rated on Our Movie-Site</h2>
+        <!--Scroll btns -->
+        <!-- left -->
+         <button type="button" class="scroll-btn-left slide-left-btn" onclick="scrollMovies(this,-1)" data-target="movieRow-1"> &#10094; </button>
+        <!-- right -->
+         <button type="button" class="scroll-btn-right slide-right-btn" onclick="scrollMovies(this,1)" data-target="movieRow-1"> &#10095; </button>
+        <!-- row-1  -->
+         <div class="overflow-x-auto scroll-smooth scrollbar-hide ml-4" id="movieRow-1">
+          <div class="inline-flex gap-8 pb-3">
+            <!-- START card-example -->
+             <!-- <div class="movie-card" id="movie-card-1">
+              <img src="https://image.tmdb.org/t/p/original/oTxPji8PY3PL0SK9e4mkt2laJKg.jpg" class="movie-card-img" alt="Viduthalai - 2">
+              <div class="movie-card-dis absolute border-t-1 bg-gray-800/90 border-gray-500 z-5 bottom-0 text-white w-full h-11  transition-all duration-300 ease-in-out">
+                <h3 class="text-2xl font-semibold pt-1 px-3">Movie 1</h3>
+                <p class="pt-3 px-3 text-sm text-white/80">Rookie cop Kumaresan joins task force hunting rebel leader Vaathiyar, but police brutality shakes his faith and sparks sympathy.</p>
+              </div>
+             </div> -->
+             <!-- END -example START -->
+          </div>
+          </div>
+     </section>
+     <!-- end row -1 -->
+
+     <!-- Start row -2 -->
+     <section class="relative bg-transparent w-full p-3">
+        <h2 class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold">Tamil Movies</h2>
+        <!--Scroll btns -->
+        <!-- left -->
+         <button type="button" class="scroll-btn-left slide-left-btn" onclick="scrollMovies(this,-1)" data-target="movieRow-2"> &#10094; </button>
+        <!-- right -->
+         <button type="button" class="scroll-btn-right slide-right-btn" onclick="scrollMovies(this,1)" data-target="movieRow-2"> &#10095; </button>
+        <!-- row-1  -->
+         <div class="overflow-x-auto scroll-smooth scrollbar-hide ml-4" id="movieRow-2">
+          <div class="inline-flex gap-8 pb-3">
+            <!-- START card-example -->
+             <!-- <div class="movie-card" id="movie-card-1">
+              <img src="https://image.tmdb.org/t/p/original/oTxPji8PY3PL0SK9e4mkt2laJKg.jpg" class="movie-card-img" alt="Viduthalai - 2">
+              <div class="movie-card-dis absolute border-t-1 bg-gray-800/90 border-gray-500 z-5 bottom-0 text-white w-full h-11  transition-all duration-300 ease-in-out">
+                <h3 class="text-2xl font-semibold pt-1 px-3">Movie 1</h3>
+                <p class="pt-3 px-3 text-sm text-white/80">Rookie cop Kumaresan joins task force hunting rebel leader Vaathiyar, but police brutality shakes his faith and sparks sympathy.</p>
+              </div>
+             </div> -->
+             <!-- END -example START -->
+          </div>
+          </div>
+     </section>
+     <!-- end row -2 -->
+
+     <!-- Start row -3 -->
+     <section class="relative bg-transparent w-full p-3">
+        <h2 class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold">Malayalam Movies</h2>
+        <!--Scroll btns -->
+        <!-- left -->
+         <button type="button" class="scroll-btn-left slide-left-btn" onclick="scrollMovies(this,-1)" data-target="movieRow-3"> &#10094; </button>
+        <!-- right -->
+         <button type="button" class="scroll-btn-right slide-right-btn" onclick="scrollMovies(this,1)" data-target="movieRow-3"> &#10095; </button>
+        <!-- row-1  -->
+         <div class="overflow-x-auto scroll-smooth scrollbar-hide ml-4" id="movieRow-3">
+          <div class="inline-flex gap-8 pb-3">
+            <!-- START card-example -->
+             <!-- <div class="movie-card" id="movie-card-1">
+              <img src="https://image.tmdb.org/t/p/original/oTxPji8PY3PL0SK9e4mkt2laJKg.jpg" class="movie-card-img" alt="Viduthalai - 2">
+              <div class="movie-card-dis absolute border-t-1 bg-gray-800/90 border-gray-500 z-5 bottom-0 text-white w-full h-11  transition-all duration-300 ease-in-out">
+                <h3 class="text-2xl font-semibold pt-1 px-3">Movie 1</h3>
+                <p class="pt-3 px-3 text-sm text-white/80">Rookie cop Kumaresan joins task force hunting rebel leader Vaathiyar, but police brutality shakes his faith and sparks sympathy.</p>
+              </div>
+             </div> -->
+             <!-- END -example START -->
+          </div>
+          </div>
+     </section>
+     <!-- end row -3 -->
+
+     <!-- Start row -4 -->
+     <section class="relative bg-transparent w-full p-3">
+        <h2 class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold">Hindi Movies</h2>
+        <!--Scroll btns -->
+        <!-- left -->
+         <button type="button" class="scroll-btn-left slide-left-btn" onclick="scrollMovies(this,-1)" data-target="movieRow-4"> &#10094; </button>
+        <!-- right -->
+         <button type="button" class="scroll-btn-right slide-right-btn" onclick="scrollMovies(this,1)" data-target="movieRow-4"> &#10095; </button>
+        <!-- row-1  -->
+         <div class="overflow-x-auto scroll-smooth scrollbar-hide ml-4" id="movieRow-4">
+          <div class="inline-flex gap-8 pb-3">
+            <!-- START card-example -->
+             <!-- <div class="movie-card" id="movie-card-1">
+              <img src="https://image.tmdb.org/t/p/original/oTxPji8PY3PL0SK9e4mkt2laJKg.jpg" class="movie-card-img" alt="Viduthalai - 2">
+              <div class="movie-card-dis absolute border-t-1 bg-gray-800/90 border-gray-500 z-5 bottom-0 text-white w-full h-11  transition-all duration-300 ease-in-out">
+                <h3 class="text-2xl font-semibold pt-1 px-3">Movie 1</h3>
+                <p class="pt-3 px-3 text-sm text-white/80">Rookie cop Kumaresan joins task force hunting rebel leader Vaathiyar, but police brutality shakes his faith and sparks sympathy.</p>
+              </div>
+             </div> -->
+             <!-- END -example START -->
+          </div>
+          </div>
+     </section>
+     <!-- end row -4 -->
+
+     <!-- Start row -4 -->
+     <section class="relative bg-transparent w-full p-3">
+        <h2 class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold">Hollywood Movies</h2>
+        <!--Scroll btns -->
+        <!-- left -->
+         <button type="button" class="scroll-btn-left slide-left-btn" onclick="scrollMovies(this,-1)" data-target="movieRow-5"> &#10094; </button>
+        <!-- right -->
+         <button type="button" class="scroll-btn-right slide-right-btn" onclick="scrollMovies(this,1)" data-target="movieRow-5"> &#10095; </button>
+        <!-- row-1  -->
+         <div class="overflow-x-auto scroll-smooth scrollbar-hide ml-4" id="movieRow-5">
+          <div class="inline-flex gap-8 pb-3">
+            <!-- START card-example -->
+             <!-- <div class="movie-card" id="movie-card-1">
+              <img src="https://image.tmdb.org/t/p/original/oTxPji8PY3PL0SK9e4mkt2laJKg.jpg" class="movie-card-img" alt="Viduthalai - 2">
+              <div class="movie-card-dis absolute border-t-1 bg-gray-800/90 border-gray-500 z-5 bottom-0 text-white w-full h-11  transition-all duration-300 ease-in-out">
+                <h3 class="text-2xl font-semibold pt-1 px-3">Movie 1</h3>
+                <p class="pt-3 px-3 text-sm text-white/80">Rookie cop Kumaresan joins task force hunting rebel leader Vaathiyar, but police brutality shakes his faith and sparks sympathy.</p>
+              </div>
+             </div> -->
+             <!-- END -example START -->
+          </div>
+          </div>
+     </section>
+     <!-- end row -5 -->
+    </section>
+    <!--End-whole-movie-rows -->
+    <!-- ========== Start Footer ========== -->
+      <footer
+        class="bg-linear-to-b from-black  to-purple-800 text-white pt-18 pb-5 px-20 w-full"
+      >
+        <div class="">
+          <div class="grid grid-cols-4">
+            <!-- Column 1 -->
+            <div class="mx-auto mb-4">
+              <h5 class="uppercase font-bold mb-4">Aesthetic Movies</h5>
+              <p class="text-sm">
+                Stream anime anytime, anywhere. Watch the latest episodes and
+                classics for free.
+              </p>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="mx-auto mb-4">
+              <h6 class="uppercase font-bold mb-4">Anime</h6>
+              <ul class="">
+                <li>
+                  <a href="#" class="text-sm"
+                    >Popular</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-sm"
+                    >New Releases</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-sm">Genres</a>
+                </li>
+                <li>
+                  <a href="#" class="text-sm"
+                    >Simulcasts</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="mx-auto mb-4">
+              <h6 class="uppercase font-bold mb-3">Support</h6>
+              <ul class="">
+                <li>
+                  <a href="#" class="text-sm"
+                    >Help Center</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-sm"
+                    >Contact Us</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-sm"
+                    >Terms of Service</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-sm"
+                    >Privacy Policy</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="mx-auto mb-4">
+              <h6 class="uppercase font-bold mb-3">Follow Us</h6>
+              <div class="flex *:mr-3">
+              <a href="#" class="text-sm"
+                ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><!-- Icon from Entypo+ Social by Daniel Bruce - https://creativecommons.org/licenses/by-sa/4.0/ --><path fill="currentColor" d="M17 1H3c-1.1 0-2 .9-2 2v14c0 1.101.9 2 2 2h7v-7H8V9.525h2v-2.05c0-2.164 1.212-3.684 3.766-3.684l1.803.002v2.605h-1.197c-.994 0-1.372.746-1.372 1.438v1.69h2.568L15 12h-2v7h4c1.1 0 2-.899 2-2V3c0-1.1-.9-2-2-2"/></svg></a>
+              <a href="#" class="text-sm"
+                ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><!-- Icon from Entypo+ Social by Daniel Bruce - https://creativecommons.org/licenses/by-sa/4.0/ --><path fill="currentColor" d="M17.316 6.246q.011.244.011.488c0 4.99-3.797 10.742-10.74 10.742c-2.133 0-4.116-.625-5.787-1.697a7.58 7.58 0 0 0 5.588-1.562a3.78 3.78 0 0 1-3.526-2.621a3.86 3.86 0 0 0 1.705-.065a3.78 3.78 0 0 1-3.028-3.703v-.047a3.8 3.8 0 0 0 1.71.473a3.775 3.775 0 0 1-1.168-5.041a10.72 10.72 0 0 0 7.781 3.945a3.8 3.8 0 0 1-.097-.861a3.773 3.773 0 0 1 3.774-3.773a3.77 3.77 0 0 1 2.756 1.191a7.6 7.6 0 0 0 2.397-.916a3.8 3.8 0 0 1-1.66 2.088a7.6 7.6 0 0 0 2.168-.594a7.6 7.6 0 0 1-1.884 1.953"/></svg></a>
+              <a href="#" class="text-sm"
+                ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><!-- Icon from Entypo+ Social by Daniel Bruce - https://creativecommons.org/licenses/by-sa/4.0/ --><path fill="currentColor" d="M13 10a3 3 0 1 1-6 0q.001-.257.049-.5H6v3.997c0 .278.225.503.503.503h6.995a.503.503 0 0 0 .502-.503V9.5h-1.049q.048.243.049.5m-3 2a2 2 0 1 0-.001-4.001A2 2 0 0 0 10 12m2.4-4.1h1.199a.3.3 0 0 0 .301-.3V6.401a.3.3 0 0 0-.301-.301H12.4a.3.3 0 0 0-.301.301V7.6c.001.165.136.3.301.3M10 .4A9.6 9.6 0 0 0 .4 10a9.6 9.6 0 0 0 9.6 9.6a9.6 9.6 0 0 0 9.6-9.6A9.6 9.6 0 0 0 10 .4m5 13.489C15 14.5 14.5 15 13.889 15H6.111C5.5 15 5 14.5 5 13.889V6.111C5 5.5 5.5 5 6.111 5h7.778C14.5 5 15 5.5 15 6.111z"/></svg></a>
+              <a href="#" class="text-sm"
+                ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><!-- Icon from Entypo+ Social by Daniel Bruce - https://creativecommons.org/licenses/by-sa/4.0/ --><path fill="currentColor" d="M10 2.3C.172 2.3 0 3.174 0 10s.172 7.7 10 7.7s10-.874 10-7.7s-.172-7.7-10-7.7m3.205 8.034l-4.49 2.096c-.393.182-.715-.022-.715-.456V8.026c0-.433.322-.638.715-.456l4.49 2.096c.393.184.393.484 0 .668"/></svg></a>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <p class="mb-0 text-white/70">
+            &copy; 2025 Aesthetic-Movies. All rights reserved.Demo project created for educational purposes. All trademarks are the property of their respective owners.
+
+          </p>
+        </div>
+      </footer>
+
+      <!-- ========== End Footer ========== -->
+    
+    <!-- tailwind-JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+      type="module"
+    ></script>
+    <!-- daisyUI -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>  -->
+    <!-- JS -->
+    <script type="module" src="./assets/js/main.js"></script>
+    
+    <script>
+      // ## script to handel movie row scroll
+      function scrollMovies(btn,direction){
+        const rowId = btn.getAttribute("data-target")
+        const container = document.getElementById(rowId)
+        const scrollAmount = 500;
+
+        container.scrollBy({
+          left: direction * scrollAmount,
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>

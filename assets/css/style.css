@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@layer utilities {
+  body::-webkit-scrollbar { width: 0 !important; height: 0 !important; }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+}
+
+@theme {
+  --font-Ubuntu: "Ubuntu", sans-serif;
+}
+
+@font-face {
+  font-family: Ubuntu ;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Ubuntu/Ubuntu-Regular.ttf") format("truetype");
+}
+
+
+
+.wrapper {
+  @apply object-cover object-center bg-blend-overlay bg-black/40 -z-10;
+}
+
+.nav--menus {
+  @apply uppercase text-gray-100 px-2 py-4 rounded text-sm font-semibold hover:bg-gray-800 hover:text-white hover:cursor-pointer active:bg-gray-900 select-none;
+}
+
+.slide-left-btn {
+  @apply bg-gray-800/80 text-white px-3 py-6 rounded-t-full rounded-b-full hover:bg-gray-800/90 hover:border hover:border-b-indigo-200 active:-translate-x-1 select-none;
+}
+
+.slide-right-btn {
+  @apply bg-gray-800/80 text-white px-3 py-6 rounded-t-full rounded-b-full hover:bg-gray-800/90 hover:border hover:border-b-indigo-200 active:translate-x-1 select-none;
+}
+
+.watch-btn {
+  @apply bg-black/30 px-5 py-2 rounded-full  border-3 border-yellow-500 text-white font-bold hover:border-yellow-400 hover:text-yellow-400 active:translate-y-1;
+}
+
+.scroll-btn-left{
+  @apply absolute z-1 top-70 left-4
+}
+
+.scroll-btn-right{
+  @apply absolute z-1 top-70 right-4
+}
+
+.movie-card{
+  @apply inline-block w-[280px] rounded my-3 h-[440px] overflow-hidden relative 
+}
+
+.movie-card-img {
+  @apply overflow-hidden object-cover h-full w-full brightness-60
+}
+
+/* .movie-card-dis{
+  @apply  absolute border-t-1 bg-gray-800/90 border-gray-500 z-5 bottom-0 text-white w-full h-11  transition-all duration-300 ease-in-out
+} */
