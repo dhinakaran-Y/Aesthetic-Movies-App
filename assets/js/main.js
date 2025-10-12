@@ -3,6 +3,7 @@ import { getMoviesApi } from "./getMoviesApi.js";
 import { scrollEventFn } from "./scrollEvent.js";
 import {movieShowerFn} from "./getHollywoodMoviesApi.js";
 
+scrollEventFn();
 //brightness-60 added
 //chose correct color for movie description.
 // await getTopRatedMovies();
@@ -15,4 +16,3 @@ await movieShowerFn(4, "hindi");
 await movieShowerFn(5, "english");
 //below for work
 await movieCardDisPopup();
-scrollEventFn();
