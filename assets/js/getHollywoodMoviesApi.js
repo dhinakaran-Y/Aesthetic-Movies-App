@@ -36,7 +36,7 @@ async function movieShowerFn(rowNo,lang) {
       }
 
       const data = await response.json();
-      console.log(data.results);
+      // console.log(data.results);
 
       return data.results; // Array of movie objects
     } catch (error) {
