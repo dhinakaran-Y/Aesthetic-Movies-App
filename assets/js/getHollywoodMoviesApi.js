@@ -15,10 +15,10 @@ function languageApi(lang){
 }
 
 async function movieShowerFn(rowNo,lang) {
-  console.log(lang);
+  // console.log(lang);
   
   const language = languageApi(lang);
-  console.log(language);
+  // console.log(language);
   
   // const malayalam = `with_original_language=ml&sort_by=release_date.desc&page=1`;
   // const tamil = `with_original_language=ta&sort_by=release_date.desc&page=1`;
@@ -36,7 +36,7 @@ async function movieShowerFn(rowNo,lang) {
       }
 
       const data = await response.json();
-      // console.log(data.results);
+      console.log(data.results);
 
       return data.results; // Array of movie objects
     } catch (error) {
@@ -52,9 +52,12 @@ async function movieShowerFn(rowNo,lang) {
   //3) get youtube trailer , and,not are all hade youtube links you filter it
   async function getMovieTrailer(movieId) {
     const res = await fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}&language=en-US`
+      `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`
     );
     const data = await res.json();
+
+   console.log("trailer data : " , data);
+   
 
     // Find a YouTube trailer
     const trailer = data.results.find(
@@ -99,18 +102,28 @@ async function movieShowerFn(rowNo,lang) {
 }
 
 function moviesUIAddFn(rowId, index, movie) {
+  // console.log(movie);
+  
   const movieInnerRow = document.getElementById(rowId).firstElementChild;
 
   async function createMovieCards() {
     movieInnerRow.insertAdjacentHTML(
       "beforeend",
-      `<div class="movie-card" id="movie-card-${index}">
-              <img src=${movie.poster} class="movie-card-img" alt="Viduthalai - 2">
+      `<a class="movie-card-link cursor-pointer active:-translate-y-1 select-none" data-movie='${JSON.stringify(
+        movie
+      )}'>
+      <div class="movie-card" id="movie-card-${index}">
+              <img src=${
+                movie.poster
+              } class="movie-card-img" alt="Viduthalai - 2">
               <div class="movie-card-dis absolute border-t-1 bg-gray-800/90 border-gray-500 z-5 bottom-0 text-white w-full h-11  transition-all duration-300 ease-in-out">
                 <h3 class="text-2xl font-semibold pt-1 px-3">${movie.title}</h3>
-                <p class="pt-3 px-3 text-sm text-white/80">${movie.desc}</p>
+                <p class="pt-3 px-3 text-sm text-white/80 line-clamp-4">${
+                  movie.desc
+                }</p>
               </div>
-             </div> `
+             </div> 
+        </a>`
     );
   }
   createMovieCards();

@@ -16,3 +16,15 @@ await movieShowerFn(4, "hindi");
 await movieShowerFn(5, "english");
 //below for work
 await movieCardDisPopup();
+
+// Handle click and redirect
+document.addEventListener("click", (e) => {
+  const link = e.target.closest(".movie-card-link");
+  console.log(link.dataset);
+  
+  if (!link) return;
+
+  const movie = JSON.parse(link.dataset.movie);
+  sessionStorage.setItem("selectedMovie", JSON.stringify(movie));
+  window.location.href = "./movie-inner-page.html";
+});

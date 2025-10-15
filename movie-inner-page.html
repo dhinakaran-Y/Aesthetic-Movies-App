@@ -167,13 +167,13 @@
       ></iframe>
 
       <!-- content section -->
-       <section class="absolute ml-20 text- justify-content-center h-11/12 w-3xl top-4/12 text-white flex-col text-shadow-2xl font-serif [text-shadow:2px_2px_10px_black] space-y-7"> 
-        <h1
-          class="font-extrabold text-8xl"
+       <section class="absolute ml-20 text- justify-content-center h-11/12 w-3xl top-4/12 text-white flex-col text-shadow-2xl font-serif [text-shadow:2px_2px_10px_black] space-y-7" id="video-playing-section"> 
+        <h1 id="movie-title"
+          class="font-extrabold text-6xl"
         >
           Movie Title
         </h1>
-        <p class="text-3xl tracking-wider">
+        <p class="text-3xl tracking-wider line-clamp-3" id="movie-desc">
           The search is over! Let Plex help you find the perfect movie to watch
           tonight for free.
         </p>
@@ -289,5 +289,7 @@
 
        <!-- scripts -->
         <script type="module" src="./assets/js/main.js"></script>
+          <script src="./assets/js/movie-inner-page.js"></script>
+        </script>
   </body>
 </html>
