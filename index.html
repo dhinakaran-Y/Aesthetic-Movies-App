@@ -4,14 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="./assets/images/Logo-Letter.png">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/images/Logo-Letter.png"
+    />
     <title>Aesthetic Movies</title>
 
     <!-- tailwind -->
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <!-- daisyUI -->
-    <link href="https://cdn.jsdelivr.net/combine/npm/daisyui@5/components/carousel.css" rel="stylesheet" type="text/css" />
+  <link
+    href="https://cdn.jsdelivr.net/combine/npm/daisyui@5/components/carousel.css"
+    rel="stylesheet"
+    type="text/css"
+  />
   <!-- not right approach -->
   <body class="bg-black font-Ubuntu">
     <main
@@ -118,7 +126,7 @@
                 class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
               >
                 <svg
-                  class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                  class="w-4 h-4 text-gray-500 dark:text-gray-400 active:bg-gray-900"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -141,14 +149,57 @@
                 required
               />
             </div>
-            <!-- avatar -->
+            <!-- GIT -->
             <div
-              class="relative content-center my-auto inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600"
+              class="relative content-center my-auto inline-flex items-center justify-center w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-800 dark:hover:text-violet-500 active:border active:border-violet-500"
             >
-              <span
-                class="font-medium text-gray-600 dark:text-gray-300 cursor-pointer"
-                >DL</span
+              <a
+                class="font-medium cursor-pointer"
+                href="https://github.com/dhinakaran-Y/Aesthetic-Movies-App"
+                target="_blank"
               >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  class="text-gray-300 hover:text-violet-500"
+                >
+                  <g
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-dasharray="32"
+                      stroke-dashoffset="32"
+                      d="M12 4c1.67 0 2.61 0.4 3 0.5c0.53 -0.43 1.94 -1.5 3.5 -1.5c0.34 1 0.29 2.22 0 3c0.75 1 1 2 1 3.5c0 2.19 -0.48 3.58 -1.5 4.5c-1.02 0.92 -2.11 1.37 -3.5 1.5c0.65 0.54 0.5 1.87 0.5 2.5c0 0.73 0 3 0 3M12 4c-1.67 0 -2.61 0.4 -3 0.5c-0.53 -0.43 -1.94 -1.5 -3.5 -1.5c-0.34 1 -0.29 2.22 0 3c-0.75 1 -1 2 -1 3.5c0 2.19 0.48 3.58 1.5 4.5c1.02 0.92 2.11 1.37 3.5 1.5c-0.65 0.54 -0.5 1.87 -0.5 2.5c0 0.73 0 3 0 3"
+                    >
+                      <animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        dur="0.7s"
+                        values="32;0"
+                      />
+                    </path>
+                    <path
+                      stroke-dasharray="10"
+                      stroke-dashoffset="10"
+                      d="M9 19c-1.41 0 -2.84 -0.56 -3.69 -1.19c-0.84 -0.63 -1.09 -1.66 -2.31 -2.31"
+                    >
+                      <animate
+                        fill="freeze"
+                        attributeName="stroke-dashoffset"
+                        begin="0.8s"
+                        dur="0.2s"
+                        values="10;0"
+                      />
+                    </path>
+                  </g>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -315,9 +366,7 @@
           </div>
           <div class="absolute justify-center w-full flex-col top-2/3">
             <div class="space-x-1 text-center space-y-2">
-              <h1 class="text-4xl text-white font-bold font-serif">
-                F1
-              </h1>
+              <h1 class="text-4xl text-white font-bold font-serif">F1</h1>
               <p class="text-xl text-white font-light">
                 Some representative placeholder content for the first slide.
               </p>
@@ -372,228 +421,364 @@
         </div>
       </div>
     </section>
-   
+
     <section id="whole-movie-rows">
-    <!-- Start row -1 -->
-     <section class="relative bg-transparent w-full p-3">
-        <h2 class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold">Top Rated on Our Movie-Site</h2>
+      <!-- Start row -1 -->
+      <section class="relative bg-transparent w-full p-3">
+        <h2
+          class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold"
+        >
+          Top Rated on Our Movie-Site
+        </h2>
         <!--Scroll btns -->
         <!-- left -->
-         <button type="button" class="scroll-btn-left slide-left-btn" onclick="scrollMovies(this,-1)" data-target="movieRow-1"> &#10094; </button>
+        <button
+          type="button"
+          class="scroll-btn-left slide-left-btn"
+          onclick="scrollMovies(this,-1)"
+          data-target="movieRow-1"
+        >
+          &#10094;
+        </button>
         <!-- right -->
-         <button type="button" class="scroll-btn-right slide-right-btn" onclick="scrollMovies(this,1)" data-target="movieRow-1"> &#10095; </button>
+        <button
+          type="button"
+          class="scroll-btn-right slide-right-btn"
+          onclick="scrollMovies(this,1)"
+          data-target="movieRow-1"
+        >
+          &#10095;
+        </button>
         <!-- row-1  -->
-         <div class="overflow-x-auto scroll-smooth scrollbar-hide ml-4" id="movieRow-1">
+        <div
+          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4"
+          id="movieRow-1"
+        >
           <div class="inline-flex gap-8 pb-3">
             <!-- START card-example -->
-             <!-- <div class="movie-card" id="movie-card-1">
+            <!-- <div class="movie-card" id="movie-card-1">
               <img src="https://image.tmdb.org/t/p/original/oTxPji8PY3PL0SK9e4mkt2laJKg.jpg" class="movie-card-img" alt="Viduthalai - 2">
               <div class="movie-card-dis absolute border-t-1 bg-gray-800/90 border-gray-500 z-5 bottom-0 text-white w-full h-11  transition-all duration-300 ease-in-out">
                 <h3 class="text-2xl font-semibold pt-1 px-3">Movie 1</h3>
                 <p class="pt-3 px-3 text-sm text-white/80">Rookie cop Kumaresan joins task force hunting rebel leader Vaathiyar, but police brutality shakes his faith and sparks sympathy.</p>
               </div>
              </div> -->
-             <!-- END -example START -->
+            <!-- END -example START -->
           </div>
-          </div>
-     </section>
-     <!-- end row -1 -->
+        </div>
+      </section>
+      <!-- end row -1 -->
 
-     <!-- Start row -2 -->
-     <section class="relative bg-transparent w-full p-3">
-        <h2 class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold">Tamil Movies</h2>
+      <!-- Start row -2 -->
+      <section class="relative bg-transparent w-full p-3">
+        <h2
+          class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold"
+        >
+          Tamil Movies
+        </h2>
         <!--Scroll btns -->
         <!-- left -->
-         <button type="button" class="scroll-btn-left slide-left-btn" onclick="scrollMovies(this,-1)" data-target="movieRow-2"> &#10094; </button>
+        <button
+          type="button"
+          class="scroll-btn-left slide-left-btn"
+          onclick="scrollMovies(this,-1)"
+          data-target="movieRow-2"
+        >
+          &#10094;
+        </button>
         <!-- right -->
-         <button type="button" class="scroll-btn-right slide-right-btn" onclick="scrollMovies(this,1)" data-target="movieRow-2"> &#10095; </button>
+        <button
+          type="button"
+          class="scroll-btn-right slide-right-btn"
+          onclick="scrollMovies(this,1)"
+          data-target="movieRow-2"
+        >
+          &#10095;
+        </button>
         <!-- row-1  -->
-         <div class="overflow-x-auto scroll-smooth scrollbar-hide ml-4" id="movieRow-2">
+        <div
+          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4"
+          id="movieRow-2"
+        >
           <div class="inline-flex gap-8 pb-3">
             <!-- START card-example -->
-             <!-- <div class="movie-card" id="movie-card-1">
+            <!-- <div class="movie-card" id="movie-card-1">
               <img src="https://image.tmdb.org/t/p/original/oTxPji8PY3PL0SK9e4mkt2laJKg.jpg" class="movie-card-img" alt="Viduthalai - 2">
               <div class="movie-card-dis absolute border-t-1 bg-gray-800/90 border-gray-500 z-5 bottom-0 text-white w-full h-11  transition-all duration-300 ease-in-out">
                 <h3 class="text-2xl font-semibold pt-1 px-3">Movie 1</h3>
                 <p class="pt-3 px-3 text-sm text-white/80">Rookie cop Kumaresan joins task force hunting rebel leader Vaathiyar, but police brutality shakes his faith and sparks sympathy.</p>
               </div>
              </div> -->
-             <!-- END -example START -->
+            <!-- END -example START -->
           </div>
-          </div>
-     </section>
-     <!-- end row -2 -->
+        </div>
+      </section>
+      <!-- end row -2 -->
 
-     <!-- Start row -3 -->
-     <section class="relative bg-transparent w-full p-3">
-        <h2 class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold">Malayalam Movies</h2>
+      <!-- Start row -3 -->
+      <section class="relative bg-transparent w-full p-3">
+        <h2
+          class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold"
+        >
+          Malayalam Movies
+        </h2>
         <!--Scroll btns -->
         <!-- left -->
-         <button type="button" class="scroll-btn-left slide-left-btn" onclick="scrollMovies(this,-1)" data-target="movieRow-3"> &#10094; </button>
+        <button
+          type="button"
+          class="scroll-btn-left slide-left-btn"
+          onclick="scrollMovies(this,-1)"
+          data-target="movieRow-3"
+        >
+          &#10094;
+        </button>
         <!-- right -->
-         <button type="button" class="scroll-btn-right slide-right-btn" onclick="scrollMovies(this,1)" data-target="movieRow-3"> &#10095; </button>
+        <button
+          type="button"
+          class="scroll-btn-right slide-right-btn"
+          onclick="scrollMovies(this,1)"
+          data-target="movieRow-3"
+        >
+          &#10095;
+        </button>
         <!-- row-1  -->
-         <div class="overflow-x-auto scroll-smooth scrollbar-hide ml-4" id="movieRow-3">
+        <div
+          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4"
+          id="movieRow-3"
+        >
           <div class="inline-flex gap-8 pb-3">
             <!-- START card-example -->
-             <!-- <div class="movie-card" id="movie-card-1">
+            <!-- <div class="movie-card" id="movie-card-1">
               <img src="https://image.tmdb.org/t/p/original/oTxPji8PY3PL0SK9e4mkt2laJKg.jpg" class="movie-card-img" alt="Viduthalai - 2">
               <div class="movie-card-dis absolute border-t-1 bg-gray-800/90 border-gray-500 z-5 bottom-0 text-white w-full h-11  transition-all duration-300 ease-in-out">
                 <h3 class="text-2xl font-semibold pt-1 px-3">Movie 1</h3>
                 <p class="pt-3 px-3 text-sm text-white/80">Rookie cop Kumaresan joins task force hunting rebel leader Vaathiyar, but police brutality shakes his faith and sparks sympathy.</p>
               </div>
              </div> -->
-             <!-- END -example START -->
+            <!-- END -example START -->
           </div>
-          </div>
-     </section>
-     <!-- end row -3 -->
+        </div>
+      </section>
+      <!-- end row -3 -->
 
-     <!-- Start row -4 -->
-     <section class="relative bg-transparent w-full p-3">
-        <h2 class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold">Hindi Movies</h2>
+      <!-- Start row -4 -->
+      <section class="relative bg-transparent w-full p-3">
+        <h2
+          class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold"
+        >
+          Hindi Movies
+        </h2>
         <!--Scroll btns -->
         <!-- left -->
-         <button type="button" class="scroll-btn-left slide-left-btn" onclick="scrollMovies(this,-1)" data-target="movieRow-4"> &#10094; </button>
+        <button
+          type="button"
+          class="scroll-btn-left slide-left-btn"
+          onclick="scrollMovies(this,-1)"
+          data-target="movieRow-4"
+        >
+          &#10094;
+        </button>
         <!-- right -->
-         <button type="button" class="scroll-btn-right slide-right-btn" onclick="scrollMovies(this,1)" data-target="movieRow-4"> &#10095; </button>
+        <button
+          type="button"
+          class="scroll-btn-right slide-right-btn"
+          onclick="scrollMovies(this,1)"
+          data-target="movieRow-4"
+        >
+          &#10095;
+        </button>
         <!-- row-1  -->
-         <div class="overflow-x-auto scroll-smooth scrollbar-hide ml-4" id="movieRow-4">
+        <div
+          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4"
+          id="movieRow-4"
+        >
           <div class="inline-flex gap-8 pb-3">
             <!-- START card-example -->
-             <!-- <div class="movie-card" id="movie-card-1">
+            <!-- <div class="movie-card" id="movie-card-1">
               <img src="https://image.tmdb.org/t/p/original/oTxPji8PY3PL0SK9e4mkt2laJKg.jpg" class="movie-card-img" alt="Viduthalai - 2">
               <div class="movie-card-dis absolute border-t-1 bg-gray-800/90 border-gray-500 z-5 bottom-0 text-white w-full h-11  transition-all duration-300 ease-in-out">
                 <h3 class="text-2xl font-semibold pt-1 px-3">Movie 1</h3>
                 <p class="pt-3 px-3 text-sm text-white/80">Rookie cop Kumaresan joins task force hunting rebel leader Vaathiyar, but police brutality shakes his faith and sparks sympathy.</p>
               </div>
              </div> -->
-             <!-- END -example START -->
+            <!-- END -example START -->
           </div>
-          </div>
-     </section>
-     <!-- end row -4 -->
+        </div>
+      </section>
+      <!-- end row -4 -->
 
-     <!-- Start row -4 -->
-     <section class="relative bg-transparent w-full p-3">
-        <h2 class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold">Hollywood Movies</h2>
+      <!-- Start row -4 -->
+      <section class="relative bg-transparent w-full p-3">
+        <h2
+          class="mb-3 pl-2 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold"
+        >
+          Hollywood Movies
+        </h2>
         <!--Scroll btns -->
         <!-- left -->
-         <button type="button" class="scroll-btn-left slide-left-btn" onclick="scrollMovies(this,-1)" data-target="movieRow-5"> &#10094; </button>
+        <button
+          type="button"
+          class="scroll-btn-left slide-left-btn"
+          onclick="scrollMovies(this,-1)"
+          data-target="movieRow-5"
+        >
+          &#10094;
+        </button>
         <!-- right -->
-         <button type="button" class="scroll-btn-right slide-right-btn" onclick="scrollMovies(this,1)" data-target="movieRow-5"> &#10095; </button>
+        <button
+          type="button"
+          class="scroll-btn-right slide-right-btn"
+          onclick="scrollMovies(this,1)"
+          data-target="movieRow-5"
+        >
+          &#10095;
+        </button>
         <!-- row-1  -->
-         <div class="overflow-x-auto scroll-smooth scrollbar-hide ml-4" id="movieRow-5">
+        <div
+          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4"
+          id="movieRow-5"
+        >
           <div class="inline-flex gap-8 pb-3">
             <!-- START card-example -->
-             <!-- <div class="movie-card" id="movie-card-1">
+            <!-- <div class="movie-card" id="movie-card-1">
               <img src="https://image.tmdb.org/t/p/original/oTxPji8PY3PL0SK9e4mkt2laJKg.jpg" class="movie-card-img" alt="Viduthalai - 2">
               <div class="movie-card-dis absolute border-t-1 bg-gray-800/90 border-gray-500 z-5 bottom-0 text-white w-full h-11  transition-all duration-300 ease-in-out">
                 <h3 class="text-2xl font-semibold pt-1 px-3">Movie 1</h3>
                 <p class="pt-3 px-3 text-sm text-white/80">Rookie cop Kumaresan joins task force hunting rebel leader Vaathiyar, but police brutality shakes his faith and sparks sympathy.</p>
               </div>
              </div> -->
-             <!-- END -example START -->
+            <!-- END -example START -->
           </div>
-          </div>
-     </section>
-     <!-- end row -5 -->
+        </div>
+      </section>
+      <!-- end row -5 -->
     </section>
     <!--End-whole-movie-rows -->
     <!-- ========== Start Footer ========== -->
-      <footer
-        class="bg-linear-to-b from-black  to-purple-800 text-white pt-18 pb-5 px-20 w-full"
-      >
-        <div class="">
-          <div class="grid grid-cols-4">
-            <!-- Column 1 -->
-            <div class="mx-auto mb-4">
-              <h5 class="uppercase font-bold mb-4">Aesthetic Movies</h5>
-              <p class="text-sm">
-                Stream anime anytime, anywhere. Watch the latest episodes and
-                classics for free.
-              </p>
-            </div>
+    <footer
+      class="bg-linear-to-b from-black to-purple-800 text-white pt-18 pb-5 px-20 w-full"
+    >
+      <div class="">
+        <div class="grid grid-cols-4">
+          <!-- Column 1 -->
+          <div class="mx-auto mb-4">
+            <h5 class="uppercase font-bold mb-4">Aesthetic Movies</h5>
+            <p class="text-sm">
+              Stream anime anytime, anywhere. Watch the latest episodes and
+              classics for free.
+            </p>
+          </div>
 
-            <!-- Column 2 -->
-            <div class="mx-auto mb-4">
-              <h6 class="uppercase font-bold mb-4">Anime</h6>
-              <ul class="">
-                <li>
-                  <a href="#" class="text-sm"
-                    >Popular</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-sm"
-                    >New Releases</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-sm">Genres</a>
-                </li>
-                <li>
-                  <a href="#" class="text-sm"
-                    >Simulcasts</a
-                  >
-                </li>
-              </ul>
-            </div>
+          <!-- Column 2 -->
+          <div class="mx-auto mb-4">
+            <h6 class="uppercase font-bold mb-4">Anime</h6>
+            <ul class="">
+              <li>
+                <a href="#" class="text-sm">Popular</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm">New Releases</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm">Genres</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm">Simulcasts</a>
+              </li>
+            </ul>
+          </div>
 
-            <!-- Column 3 -->
-            <div class="mx-auto mb-4">
-              <h6 class="uppercase font-bold mb-3">Support</h6>
-              <ul class="">
-                <li>
-                  <a href="#" class="text-sm"
-                    >Help Center</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-sm"
-                    >Contact Us</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-sm"
-                    >Terms of Service</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-sm"
-                    >Privacy Policy</a
-                  >
-                </li>
-              </ul>
-            </div>
+          <!-- Column 3 -->
+          <div class="mx-auto mb-4">
+            <h6 class="uppercase font-bold mb-3">Support</h6>
+            <ul class="">
+              <li>
+                <a href="#" class="text-sm">Help Center</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm">Contact Us</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm">Terms of Service</a>
+              </li>
+              <li>
+                <a href="#" class="text-sm">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
 
-            <!-- Column 4 -->
-            <div class="mx-auto mb-4">
-              <h6 class="uppercase font-bold mb-3">Follow Us</h6>
-              <div class="flex *:mr-3">
+          <!-- Column 4 -->
+          <div class="mx-auto mb-4">
+            <h6 class="uppercase font-bold mb-3">Follow Us</h6>
+            <div class="flex *:mr-3">
               <a href="#" class="text-sm"
-                ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><!-- Icon from Entypo+ Social by Daniel Bruce - https://creativecommons.org/licenses/by-sa/4.0/ --><path fill="currentColor" d="M17 1H3c-1.1 0-2 .9-2 2v14c0 1.101.9 2 2 2h7v-7H8V9.525h2v-2.05c0-2.164 1.212-3.684 3.766-3.684l1.803.002v2.605h-1.197c-.994 0-1.372.746-1.372 1.438v1.69h2.568L15 12h-2v7h4c1.1 0 2-.899 2-2V3c0-1.1-.9-2-2-2"/></svg></a>
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                >
+                  <!-- Icon from Entypo+ Social by Daniel Bruce - https://creativecommons.org/licenses/by-sa/4.0/ -->
+                  <path
+                    fill="currentColor"
+                    d="M17 1H3c-1.1 0-2 .9-2 2v14c0 1.101.9 2 2 2h7v-7H8V9.525h2v-2.05c0-2.164 1.212-3.684 3.766-3.684l1.803.002v2.605h-1.197c-.994 0-1.372.746-1.372 1.438v1.69h2.568L15 12h-2v7h4c1.1 0 2-.899 2-2V3c0-1.1-.9-2-2-2"
+                  /></svg
+              ></a>
               <a href="#" class="text-sm"
-                ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><!-- Icon from Entypo+ Social by Daniel Bruce - https://creativecommons.org/licenses/by-sa/4.0/ --><path fill="currentColor" d="M17.316 6.246q.011.244.011.488c0 4.99-3.797 10.742-10.74 10.742c-2.133 0-4.116-.625-5.787-1.697a7.58 7.58 0 0 0 5.588-1.562a3.78 3.78 0 0 1-3.526-2.621a3.86 3.86 0 0 0 1.705-.065a3.78 3.78 0 0 1-3.028-3.703v-.047a3.8 3.8 0 0 0 1.71.473a3.775 3.775 0 0 1-1.168-5.041a10.72 10.72 0 0 0 7.781 3.945a3.8 3.8 0 0 1-.097-.861a3.773 3.773 0 0 1 3.774-3.773a3.77 3.77 0 0 1 2.756 1.191a7.6 7.6 0 0 0 2.397-.916a3.8 3.8 0 0 1-1.66 2.088a7.6 7.6 0 0 0 2.168-.594a7.6 7.6 0 0 1-1.884 1.953"/></svg></a>
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                >
+                  <!-- Icon from Entypo+ Social by Daniel Bruce - https://creativecommons.org/licenses/by-sa/4.0/ -->
+                  <path
+                    fill="currentColor"
+                    d="M17.316 6.246q.011.244.011.488c0 4.99-3.797 10.742-10.74 10.742c-2.133 0-4.116-.625-5.787-1.697a7.58 7.58 0 0 0 5.588-1.562a3.78 3.78 0 0 1-3.526-2.621a3.86 3.86 0 0 0 1.705-.065a3.78 3.78 0 0 1-3.028-3.703v-.047a3.8 3.8 0 0 0 1.71.473a3.775 3.775 0 0 1-1.168-5.041a10.72 10.72 0 0 0 7.781 3.945a3.8 3.8 0 0 1-.097-.861a3.773 3.773 0 0 1 3.774-3.773a3.77 3.77 0 0 1 2.756 1.191a7.6 7.6 0 0 0 2.397-.916a3.8 3.8 0 0 1-1.66 2.088a7.6 7.6 0 0 0 2.168-.594a7.6 7.6 0 0 1-1.884 1.953"
+                  /></svg
+              ></a>
               <a href="#" class="text-sm"
-                ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><!-- Icon from Entypo+ Social by Daniel Bruce - https://creativecommons.org/licenses/by-sa/4.0/ --><path fill="currentColor" d="M13 10a3 3 0 1 1-6 0q.001-.257.049-.5H6v3.997c0 .278.225.503.503.503h6.995a.503.503 0 0 0 .502-.503V9.5h-1.049q.048.243.049.5m-3 2a2 2 0 1 0-.001-4.001A2 2 0 0 0 10 12m2.4-4.1h1.199a.3.3 0 0 0 .301-.3V6.401a.3.3 0 0 0-.301-.301H12.4a.3.3 0 0 0-.301.301V7.6c.001.165.136.3.301.3M10 .4A9.6 9.6 0 0 0 .4 10a9.6 9.6 0 0 0 9.6 9.6a9.6 9.6 0 0 0 9.6-9.6A9.6 9.6 0 0 0 10 .4m5 13.489C15 14.5 14.5 15 13.889 15H6.111C5.5 15 5 14.5 5 13.889V6.111C5 5.5 5.5 5 6.111 5h7.778C14.5 5 15 5.5 15 6.111z"/></svg></a>
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                >
+                  <!-- Icon from Entypo+ Social by Daniel Bruce - https://creativecommons.org/licenses/by-sa/4.0/ -->
+                  <path
+                    fill="currentColor"
+                    d="M13 10a3 3 0 1 1-6 0q.001-.257.049-.5H6v3.997c0 .278.225.503.503.503h6.995a.503.503 0 0 0 .502-.503V9.5h-1.049q.048.243.049.5m-3 2a2 2 0 1 0-.001-4.001A2 2 0 0 0 10 12m2.4-4.1h1.199a.3.3 0 0 0 .301-.3V6.401a.3.3 0 0 0-.301-.301H12.4a.3.3 0 0 0-.301.301V7.6c.001.165.136.3.301.3M10 .4A9.6 9.6 0 0 0 .4 10a9.6 9.6 0 0 0 9.6 9.6a9.6 9.6 0 0 0 9.6-9.6A9.6 9.6 0 0 0 10 .4m5 13.489C15 14.5 14.5 15 13.889 15H6.111C5.5 15 5 14.5 5 13.889V6.111C5 5.5 5.5 5 6.111 5h7.778C14.5 5 15 5.5 15 6.111z"
+                  /></svg
+              ></a>
               <a href="#" class="text-sm"
-                ><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><!-- Icon from Entypo+ Social by Daniel Bruce - https://creativecommons.org/licenses/by-sa/4.0/ --><path fill="currentColor" d="M10 2.3C.172 2.3 0 3.174 0 10s.172 7.7 10 7.7s10-.874 10-7.7s-.172-7.7-10-7.7m3.205 8.034l-4.49 2.096c-.393.182-.715-.022-.715-.456V8.026c0-.433.322-.638.715-.456l4.49 2.096c.393.184.393.484 0 .668"/></svg></a>
-            </div>
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                >
+                  <!-- Icon from Entypo+ Social by Daniel Bruce - https://creativecommons.org/licenses/by-sa/4.0/ -->
+                  <path
+                    fill="currentColor"
+                    d="M10 2.3C.172 2.3 0 3.174 0 10s.172 7.7 10 7.7s10-.874 10-7.7s-.172-7.7-10-7.7m3.205 8.034l-4.49 2.096c-.393.182-.715-.022-.715-.456V8.026c0-.433.322-.638.715-.456l4.49 2.096c.393.184.393.484 0 .668"
+                  /></svg
+              ></a>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="text-center mt-12">
-          <p class="mb-0 text-white/70">
-            &copy; 2025 Aesthetic-Movies. All rights reserved.Demo project created for educational purposes. All trademarks are the property of their respective owners.
+      <div class="text-center mt-12">
+        <p class="mb-0 text-white/70">
+          &copy; 2025 Aesthetic-Movies. All rights reserved.Demo project created
+          for educational purposes. All trademarks are the property of their
+          respective owners.
+        </p>
+      </div>
+    </footer>
 
-          </p>
-        </div>
-      </footer>
+    <!-- ========== End Footer ========== -->
 
-      <!-- ========== End Footer ========== -->
-    
     <!-- tailwind-JS -->
     <script
       src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
@@ -603,12 +788,12 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>  -->
     <!-- JS -->
     <script type="module" src="./assets/js/main.js"></script>
-    
+
     <script>
       // ## script to handel movie row scroll
-      function scrollMovies(btn,direction){
-        const rowId = btn.getAttribute("data-target")
-        const container = document.getElementById(rowId)
+      function scrollMovies(btn, direction) {
+        const rowId = btn.getAttribute("data-target");
+        const container = document.getElementById(rowId);
         const scrollAmount = 500;
 
         container.scrollBy({

@@ -20,11 +20,21 @@ await movieCardDisPopup();
 // Handle click and redirect
 document.addEventListener("click", (e) => {
   const link = e.target.closest(".movie-card-link");
-  console.log(link.dataset);
   
-  if (!link) return;
+  if (link){
+    const data = link.dataset;
+    // console.log(data);
 
-  const movie = JSON.parse(link.dataset.movie);
-  sessionStorage.setItem("selectedMovie", JSON.stringify(movie));
-  window.location.href = "./movie-inner-page.html";
+    // console.log(typeof(data.moviePoster));
+    // const movie = data.movieTitle;
+
+    sessionStorage.setItem("title", data.movieTitle);
+    // sessionStorage.setItem("poster", data.moviePoster);
+    sessionStorage.setItem("trailer", data.movieTrailers);
+    sessionStorage.setItem("desc", data.movieDesc);
+    window.location.href = "./movie-inner-page.html";
+  }
+  // else{
+  //   alert("404")
+  // }
 });

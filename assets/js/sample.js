@@ -1,6 +1,6 @@
-const response = await fetch(
-  `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_original_language=ml&sort_by=release_date.desc&page=1`
-);
+// const response = await fetch(
+//   `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_original_language=ml&sort_by=release_date.desc&page=1`
+// );
 
 //GET https://api.themoviedb.org/3/discover/movie
 // ?api_key=YOUR_KEY

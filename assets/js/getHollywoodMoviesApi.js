@@ -56,7 +56,7 @@ async function movieShowerFn(rowNo,lang) {
     );
     const data = await res.json();
 
-   console.log("trailer data : " , data);
+  //  console.log("trailer data : " , data);
    
 
     // Find a YouTube trailer
@@ -86,7 +86,7 @@ async function movieShowerFn(rowNo,lang) {
       });
     }
 
-    console.log(moviesWithTrailers);
+    // console.log(moviesWithTrailers);
     //   return moviesWithTrailers;
 
     // loop and set in UI
@@ -107,11 +107,16 @@ function moviesUIAddFn(rowId, index, movie) {
   const movieInnerRow = document.getElementById(rowId).firstElementChild;
 
   async function createMovieCards() {
+    // console.log(JSON.stringify(movie.poster));
+
+    
     movieInnerRow.insertAdjacentHTML(
       "beforeend",
-      `<a class="movie-card-link cursor-pointer active:-translate-y-1 select-none" data-movie='${JSON.stringify(
-        movie
-      )}'>
+      `<a class="movie-card-link cursor-pointer active:-translate-y-1 select-none" 
+      data-movie-title=${JSON.stringify(movie.title)}
+      data-movie-poster=${JSON.stringify(movie.poster)}
+      data-movie-trailers=${JSON.stringify(movie.trailers)}
+      data-movie-desc=${JSON.stringify(movie.desc)}>
       <div class="movie-card" id="movie-card-${index}">
               <img src=${
                 movie.poster
