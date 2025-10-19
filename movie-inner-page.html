@@ -22,41 +22,6 @@
         </a>
         <ul class="flex justify-center items-center px-5 space-x-3" id="menus">
           <a class="nav--menus">Home</a>
-          <el-dropdown class="inline-block">
-            <button class="inline-flex nav--menus">
-              Movies
-              <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
-                class="-mr-1 size-5 text-gray-400">
-                <path
-                  d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                  clip-rule="evenodd" fill-rule="evenodd" />
-              </svg>
-            </button>
-
-            <el-menu anchor="bottom end" popover
-              class="w-56 origin-top-right divide-y divide-white/10 rounded-md bg-gray-800 outline-1 -outline-offset-1 outline-white/10 transition transition-discrete [--anchor-gap:--spacing(2)] data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in">
-              <div class="py-1">
-                <a href="#"
-                  class="block px-4 py-2 text-sm font-semibold text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden">Categories</a>
-              </div>
-              <div class="py-1">
-                <a href="#"
-                  class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden">Tamil</a>
-                <a href="#"
-                  class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden">Malayalam</a>
-                <a href="#"
-                  class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden">Kannada</a>
-                <a href="#"
-                  class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden">Telugu</a>
-                <a href="#"
-                  class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden">Hindi</a>
-              </div>
-              <div class="py-1">
-                <a href="#"
-                  class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden">Hollywood</a>
-              </div>
-            </el-menu>
-          </el-dropdown>
           <a class="nav--menus">Web Series</a>
           <a class="nav--menus">anime</a>
         </ul>
@@ -162,7 +127,7 @@
   <!-- movie card section -->
   <section class="w-full px-8" id="whole-movie-rows">
     <h2 class="mb-3 pl-3 py-4 border-l-4 border-yellow-500 text-white text-3xl font-semibold">
-      New Releases
+      More Related
     </h2>
     <div id="movieRow-1">
       <div class="px-20 grid grid-cols-4 gap-2">
@@ -281,7 +246,6 @@
     const trailerFrame = document.querySelector("iframe");
     const trailerApi = sessionStorage.getItem("trailer");
     const sessionTrailer = trailerApi === "null" || trailerApi === "undefined" || trailerApi === "" ? "https://www.youtube.com/watch?v=dlkGhgwGmLM" : trailerApi;
-
     
     // console.log("movie info : ", movie);
       movieTitleEl.textContent = sessionStorage.getItem("title");

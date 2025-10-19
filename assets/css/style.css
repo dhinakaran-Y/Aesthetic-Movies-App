@@ -35,11 +35,11 @@
 }
 
 .slide-left-btn {
-  @apply bg-gray-800/80 text-white px-3 py-6 rounded-t-full rounded-b-full hover:bg-gray-800/90 hover:border hover:border-b-indigo-200 active:-translate-x-1 select-none;
+  @apply bg-gray-800/80 text-white px-3 py-6 rounded-t-full rounded-b-full hover:cursor-pointer hover:bg-gray-800/90 hover:border hover:border-b-indigo-200 active:-translate-x-1 select-none;
 }
 
 .slide-right-btn {
-  @apply bg-gray-800/80 text-white px-3 py-6 rounded-t-full rounded-b-full hover:bg-gray-800/90 hover:border hover:border-b-indigo-200 active:translate-x-1 select-none;
+  @apply bg-gray-800/80 text-white px-3 py-6 rounded-t-full rounded-b-full hover:cursor-pointer hover:bg-gray-800/90 hover:border hover:border-b-indigo-200 active:translate-x-1 select-none;
 }
 
 .watch-btn {

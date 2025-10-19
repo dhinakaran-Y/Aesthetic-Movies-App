@@ -20,6 +20,11 @@ await movieCardDisPopup();
 // Handle click and redirect
 document.addEventListener("click", (e) => {
   const link = e.target.closest(".movie-card-link");
+  const movieRowEl = e.target.closest(".movieRow");
+  // to get movie row's number
+  // const movieRowNo = movieRowEl.id.split("-")[1];
+  const movieCategory = movieRowEl.dataset.category;
+  
   
   if (link){
     const data = link.dataset;
@@ -32,6 +37,7 @@ document.addEventListener("click", (e) => {
     // sessionStorage.setItem("poster", data.moviePoster);
     sessionStorage.setItem("trailer", data.movieTrailers);
     sessionStorage.setItem("desc", data.movieDesc);
+    sessionStorage.setItem("movieCategory", movieCategory);
     window.location.href = "./movie-inner-page.html";
   }
   // else{

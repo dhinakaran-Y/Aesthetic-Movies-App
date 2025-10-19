@@ -1,8 +1,34 @@
 import { movieShowerFn } from "./getHollywoodMoviesApi.js";
 import { movieCardDisPopup } from "./movie-card-dis-popup.js";
 
-await movieShowerFn(1, "top");
+await(async function movieRowNoSet() {
+    const movieCategory = sessionStorage.getItem("movieCategory")
+    await movieShowerFn(1, movieCategory);
+}())
 await movieCardDisPopup();
+
+// Handle click and redirect
+document.addEventListener("click", (e) => {
+  const link = e.target.closest(".movie-card-link");
+  const movieRowEl = e.target.closest(".movieRow");
+  
+  if (link){
+    const data = link.dataset;
+    // console.log(data);
+
+    // console.log(typeof(data.moviePoster));
+    // const movie = data.movieTitle;
+
+    sessionStorage.setItem("title", data.movieTitle);
+    // sessionStorage.setItem("poster", data.moviePoster);
+    sessionStorage.setItem("trailer", data.movieTrailers);
+    sessionStorage.setItem("desc", data.movieDesc);
+    window.location.href = "./movie-inner-page.html";
+  }
+  // else{
+  //   alert("404")
+  // }
+});
 
 // console.log("get : ", sessionStorage.getItem("trailer"));
 // const movieTitleEl = document.getElementById("movie-title");

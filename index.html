@@ -81,34 +81,39 @@
                   </div>
                   <div class="py-1">
                     <a
-                      href="#"
+                      href="#movieRow-1"
+                      class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                      >Top Rated</a
+                    >
+                    <a
+                      href="#movieRow-2"
                       class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
                       >Tamil</a
                     >
                     <a
-                      href="#"
+                      href="#movieRow-3"
                       class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
                       >Malayalam</a
                     >
                     <a
                       href="#"
-                      class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:outline-hidden"
                       >Kannada</a
                     >
                     <a
                       href="#"
-                      class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
+                      class="block px-4 py-2 text-sm text-gray-700 focus:outline-hidden"
                       >Telugu</a
                     >
                     <a
-                      href="#"
+                      href="#movieRow-4"
                       class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
                       >Hindi</a
                     >
                   </div>
                   <div class="py-1">
                     <a
-                      href="#"
+                      href="#movieRow-5"
                       class="block px-4 py-2 text-sm text-gray-300 focus:bg-white/5 focus:text-white focus:outline-hidden"
                       >Hollywood</a
                     >
@@ -452,8 +457,8 @@
         </button>
         <!-- row-1  -->
         <div
-          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4"
-          id="movieRow-1"
+          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4 movieRow"
+          id="movieRow-1" data-category="top"
         >
           <div class="inline-flex gap-8 pb-3">
             <!-- START card-example -->
@@ -498,8 +503,8 @@
         </button>
         <!-- row-1  -->
         <div
-          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4"
-          id="movieRow-2"
+          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4 movieRow"
+          id="movieRow-2" data-category="tamil"
         >
           <div class="inline-flex gap-8 pb-3">
             <!-- START card-example -->
@@ -544,8 +549,8 @@
         </button>
         <!-- row-1  -->
         <div
-          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4"
-          id="movieRow-3"
+          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4 movieRow"
+          id="movieRow-3" data-category="malayalam"
         >
           <div class="inline-flex gap-8 pb-3">
             <!-- START card-example -->
@@ -590,8 +595,8 @@
         </button>
         <!-- row-1  -->
         <div
-          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4"
-          id="movieRow-4"
+          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4 movieRow"
+          id="movieRow-4" data-category="hindi"
         >
           <div class="inline-flex gap-8 pb-3">
             <!-- START card-example -->
@@ -636,8 +641,8 @@
         </button>
         <!-- row-1  -->
         <div
-          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4"
-          id="movieRow-5"
+          class="overflow-x-auto scroll-smooth scrollbar-hide ml-4 movieRow"
+          id="movieRow-5" data-category="english"
         >
           <div class="inline-flex gap-8 pb-3">
             <!-- START card-example -->
@@ -722,9 +727,8 @@
                   <!-- Icon from Entypo+ Social by Daniel Bruce - https://creativecommons.org/licenses/by-sa/4.0/ -->
                   <path
                     fill="currentColor"
-                    d="M17 1H3c-1.1 0-2 .9-2 2v14c0 1.101.9 2 2 2h7v-7H8V9.525h2v-2.05c0-2.164 1.212-3.684 3.766-3.684l1.803.002v2.605h-1.197c-.994 0-1.372.746-1.372 1.438v1.69h2.568L15 12h-2v7h4c1.1 0 2-.899 2-2V3c0-1.1-.9-2-2-2"
-                  /></svg
-              ></a>
+                    d="M17 1H3c-1.1 0-2 .9-2 2v14c0 1.101.9 2 2 2h7v-7H8V9.525h2v-2.05c0-2.164 1.212-3.684 3.766-3.684l1.803.002v2.605h-1.197c-.994 0-1.372.746-1.372 1.438v1.69h2.568L15 12h-2v7h4c1.1 0 2-.899 2-2V3c0-1.1-.9-2-2-2"/>
+                    </svg></a>
               <a href="#" class="text-sm"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
