@@ -7,38 +7,51 @@ const topMoviesApi = `https://api.themoviedb.org/3/movie/top_rated?`;
 
 function languageApi(lang){
   const today = new Date().toISOString().split("T")[0];
-  if(lang === 'tamil')return `with_original_language=ta&sort_by=release_date.desc&release_date.lte=${today}&page=1`;
-  if(lang === 'english')return `with_original_language=en&sort_by=release_date.desc&release_date.lte=${today}&page=1`;
-  if(lang === 'malayalam')return `with_original_language=ml&sort_by=release_date.desc&release_date.lte=${today}&page=1`;
-  if(lang === 'hindi')return `with_original_language=hi&sort_by=release_date.desc&release_date.lte=${today}&page=1`;
+  const currentDate = new Date()
+  const theDate = `${currentDate.getFullYear()}-${currentDate.getMonth()-4}-${currentDate.getDate()}`
+  const bDay = '2025-05-05'
+  
+  if(lang === 'tamil')return `with_original_language=ta&sort_by=release_date.desc&release_date.lte=${theDate}`;
+  if(lang === 'english')return `with_original_language=en&sort_by=release_date.desc&release_date.lte=${theDate}`;
+  if(lang === 'malayalam')return `with_original_language=ml&sort_by=release_date.desc&release_date.lte=${theDate}`;
+  if(lang === 'hindi')return `with_original_language=hi&sort_by=release_date.desc&release_date.lte=${theDate}`;
   if(lang === 'top')return `language=en-US&page=1`;
 }
 
 async function movieShowerFn(rowNo,lang) {
-  // console.log(lang);
   
   const language = languageApi(lang);
-  // console.log(language);
   
-  // const malayalam = `with_original_language=ml&sort_by=release_date.desc&page=1`;
-  // const tamil = `with_original_language=ta&sort_by=release_date.desc&page=1`;
-  // const english = `with_original_language=en-US&sort_by=release_date.desc&page=1`;
-  // const hindi = `with_original_language=hi&sort_by=release_date.desc&page=1`;
-  //1)Get top rated movies
-  async function getTopRatedMovies() {
-    const url =`${lang ==='top' ? topMoviesApi : 'https://api.themoviedb.org/3/discover/movie?'}api_key=${API_KEY}&${language}`;
-    // console.log(url);
-    try {
-      const response = await fetch(url);
+  async function getMoviesAPI() {
+    const url1 =`${lang ==='top' ? topMoviesApi : 'https://api.themoviedb.org/3/discover/movie?'}api_key=${API_KEY}&${language}&page=1`;
+    const url2 =`${lang ==='top' ? topMoviesApi : 'https://api.themoviedb.org/3/discover/movie?'}api_key=${API_KEY}&${language}&page=2`;
+    const url3 =`${lang ==='top' ? topMoviesApi : 'https://api.themoviedb.org/3/discover/movie?'}api_key=${API_KEY}&${language}&page=3`;
+    const url4 =`${lang ==='top' ? topMoviesApi : 'https://api.themoviedb.org/3/discover/movie?'}api_key=${API_KEY}&${language}&page=4`;
+    const url5 =`${lang ==='top' ? topMoviesApi : 'https://api.themoviedb.org/3/discover/movie?'}api_key=${API_KEY}&${language}&page=5`;
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+    try {
+      const response1 = await fetch(url1);
+      const response2 = await fetch(url2);
+      const response3 = await fetch(url3);
+      const response4 = await fetch(url4);
+      const response5 = await fetch(url5);
+
+      if (!response1.ok || !response2.ok || !response3.ok || !response4 || !response5) {
+        throw new Error(
+          `HTTP error! Status: ${response1.status},${response2.status},${response3.status},${response4},${response5}`
+        );
       }
 
-      const data = await response.json();
-      // console.log(data.results);
-
-      return data.results; // Array of movie objects
+      const data1 = await response1.json(); 
+      const data2 = await response2.json(); 
+      const data3 = await response3.json();
+      const data4 = await response4.json();
+      const data5 = await response5.json();
+      const fullData = [...data1.results, ...data2.results , ...data3.results, ...data4.results, ...data5.results]
+      
+      // console.log("full1 :",fullData);
+      
+      return fullData; // Array of movie objects
     } catch (error) {
       return console.error(error);
     }
@@ -51,64 +64,71 @@ async function movieShowerFn(rowNo,lang) {
 
   //3) get youtube trailer , and,not are all hade youtube links you filter it
   async function getMovieTrailer(movieId) {
-    const res = await fetch(
-      `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`
-    );
-    const data = await res.json();
+    
+    try{
+      const res = await fetch(
+        `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}&append_to_response=credits,videos,images`
+      );
 
-  //  console.log("trailer data : " , data);
-   
+      // const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/api_key=${API_KEY}`);
 
-    // Find a YouTube trailer
-    const trailer = data.results.find(
-      (v) => v.site === "YouTube" && v.type === "Trailer"
-    );
+     if (!res.ok) {
+        throw new Error(
+          `Fetch error , status : ${res.status} , ${res.type} , ${res.statusText}`
+        );
+      }
 
-    if (!trailer) return null; // no trailer found
-    return `https://www.youtube.com/watch?v=${trailer.key}`;
+      const data = await res.json();
+
+      // Find a YouTube trailer
+      const trailer = data.videos.results.find((v) => v.site === "YouTube");
+
+      if (!trailer) return null; // no trailer found
+
+      return `https://www.youtube.com/watch?v=${trailer.key}`;
+    }catch {
+        return console.error(error);     
+    }
   }
 
   //4
-  async function getTopRatedWithTrailers() {
-    const topRated = await getTopRatedMovies();
-    // console.log("555 : ",topRated);
+  async function setMoviesWithTrailers() {
+    const topRated = await getMoviesAPI();
 
     const moviesWithTrailers = [];
 
     for (const movie of topRated) {
       const trailers = await getMovieTrailer(movie.id);
-      moviesWithTrailers.push({
-        title: movie.title,
-        rating: movie.vote_average,
-        poster: getPosterUrl(movie.poster_path),
-        trailers: trailers,
-        desc: movie.overview,
-      });
+  
+      if(trailers !== null || undefined || "" ) {
+        moviesWithTrailers.push({
+          title: movie.title,
+          rating: movie.vote_average,
+          poster: getPosterUrl(movie.poster_path),
+          trailers: trailers,
+          desc: movie.overview,
+        });
+      }
     }
 
-    // console.log(moviesWithTrailers);
-    //   return moviesWithTrailers;
+    // console.log("mt : ",moviesWithTrailers);
+    
 
     // loop and set in UI
-    for (let i = 1; i <= moviesWithTrailers.length; i++) {
-      // console.log(data[i]);
-      //  console.log(i);
-      //create movie cards
+    for (let i = 1; i <= 20 ; i++) {
+      
       await moviesUIAddFn(`movieRow-${rowNo}`,i, moviesWithTrailers[i - 1]);
     }
     // createMovieCards(1,[...moviesWithTrailers])
   }
-  await getTopRatedWithTrailers();
+  await setMoviesWithTrailers();
 }
 
 function moviesUIAddFn(rowId, index, movie) {
-  // console.log(movie);
   
   const movieInnerRow = document.getElementById(rowId).firstElementChild;
 
   async function createMovieCards() {
-    // console.log(JSON.stringify(movie.poster));
-
     
     movieInnerRow.insertAdjacentHTML(
       "beforeend",
