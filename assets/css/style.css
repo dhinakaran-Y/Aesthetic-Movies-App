@@ -43,7 +43,7 @@
 }
 
 .watch-btn {
-  @apply bg-black/30 px-5 py-2 rounded-full  border-3 border-yellow-500 text-white font-bold hover:border-yellow-400 hover:text-yellow-400 active:translate-y-1;
+  @apply bg-black/30 px-5 py-2 rounded-full  border-3 hover:cursor-pointer border-yellow-500 text-white font-bold hover:border-yellow-400 hover:text-yellow-400 active:translate-y-1;
 }
 
 .scroll-btn-left{

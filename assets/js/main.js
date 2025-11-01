@@ -1,5 +1,4 @@
 import { movieCardDisPopup } from "./movie-card-dis-popup.js";
-import { getMoviesApi } from "./getMoviesApi.js";
 import { scrollEventFn } from "./scrollEvent.js";
 import {movieShowerFn} from "./getHollywoodMoviesApi.js";
 
@@ -19,12 +18,32 @@ await movieCardDisPopup();
 
 // Handle click and redirect
 document.addEventListener("click", (e) => {
-  const link = e.target.closest(".movie-card-link");
-  const movieRowEl = e.target.closest(".movieRow");
+
+  const targeted = e.target
+
+  if(e.target.classList.contains("watch-btn")){    
+    const trailerKey = targeted.dataset.trailerKey;
+    const movieTitle = targeted.parentElement.children[0].textContent;
+    const movieDesc = targeted.parentElement.children[1].innerText;
+
+    const trailerLink = `https://www.youtube.com/watch?v=${trailerKey}`;
+
+    // set Session Storage
+    sessionStorage.setItem("title", movieTitle);
+    sessionStorage.setItem("trailer", trailerLink);
+    sessionStorage.setItem("desc", movieDesc);
+    sessionStorage.setItem("movieCategory", "new");
+    window.location.href = "./movie-inner-page.html";
+    
+  }
+
+  const movieCard = document.getElementsByClassName("movie-card")
+  if(movieCard){
+    const link = e.target.closest(".movie-card-link");
+    const movieRowEl = e.target.closest(".movieRow");
   // to get movie row's number
   // const movieRowNo = movieRowEl.id.split("-")[1];
   const movieCategory = movieRowEl.dataset.category;
-  
   
   if (link){
     const data = link.dataset;
@@ -43,4 +62,6 @@ document.addEventListener("click", (e) => {
   // else{
   //   alert("404")
   // }
+}
+  
 });

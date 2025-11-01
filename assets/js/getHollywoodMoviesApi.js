@@ -141,7 +141,7 @@ function moviesUIAddFn(rowId, index, movie) {
               <img src=${
                 movie.poster
               } class="movie-card-img" alt="Viduthalai - 2">
-              <div class="movie-card-dis absolute border-t-1 bg-gray-800/90 border-gray-500 z-5 bottom-0 text-white w-full h-11  transition-all duration-300 ease-in-out">
+              <div class="movie-card-dis absolute border-t-1 bg-gray-900/80 border-gray-500 z-5 bottom-0 text-white w-full h-11  transition-all duration-300 ease-in-out">
                 <h3 class="text-2xl font-semibold pt-1 px-3">${movie.title}</h3>
                 <p class="pt-3 px-3 text-sm text-white/80 line-clamp-4">${
                   movie.desc
